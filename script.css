@@ -1,0 +1,106 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+nav {
+  background-color: gray;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+h1 {
+  background-color: rgb(71, 221, 221);
+  padding: 5px 3px 5px 30px;
+}
+
+a {
+  background-color: gray;
+  font-size: medium;
+}
+
+.nav2 {
+  padding: 5px;
+  background-color: gray;
+  color: blue;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: end;
+  text-decoration: underline 2px;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.container {
+  margin-top: 2%;
+  display: grid;
+  /* Two equal columns */
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+}
+
+.container h2 {
+  /* Position the heading in the first column */
+  grid-column: 1 / 2;
+  text-align: end;
+}
+
+.container .w1 {
+  /* Position the image and text in the second column */
+  grid-column: 2 / 3;
+  /* Enable positioning for child elements */
+  position: relative;
+}
+
+.container img {
+  max-width: 100%;
+  height: auto;
+  filter: brightness(50%);
+  /* Add transition for hover effect */
+  transition: filter 0.3s;
+}
+
+.container img:hover {
+  filter: brightness(100%);
+}
+
+.text1 {
+  /* Position the text relative to its parent (.w1) */
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  background-color: rgba(71, 221, 221, 0.8);
+  padding: 5px;
+  color: white;
+}
+.container ul{
+    display: flex;
+    justify-content: space-around;
+    margin-left: 10%;
+}
+.container a{
+    background-color: white;
+}
+#contact {
+  padding-bottom: 2%;
+}
+
+@media (max-width: 768px) {
+  .container {
+    /* Switch to a single column layout on smaller screens */
+    grid-template-columns: 1fr;
+  }
+
+  .container h2,
+  .container p,
+  .container .w1 {
+    /* Reset grid-column to auto for full width on smaller screens */
+    grid-column: auto;
+    text-align: center;
+  }
+}
